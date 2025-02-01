@@ -44,6 +44,7 @@
     <PackageReference Include="Vogen" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\TUnit.FsCheck\TUnit.FsCheck.csproj" />
     <ProjectReference Include="..\TUnit.TestProject.Library\TUnit.TestProject.Library.csproj" />
     <ProjectReference Include="..\TUnit\TUnit.csproj" />
   </ItemGroup>
