@@ -13,10 +13,8 @@ public class ThrowsWithParamNameAssertCondition<TActual, TException>(
     protected override string GetExpectation()
         => $"to throw {typeof(TException).Name.PrependAOrAn()} which param name equals \"{expectedParamName.TruncateWithEllipsis(100)}\"";
 
-    protected override ValueTask<AssertionResult> GetResult(
-        TActual? actualValue, Exception? exception,
-        AssertionMetadata assertionMetadata
-    )
+    protected override Task<AssertionResult> GetResult(TActual? actualValue, Exception? exception,
+        AssertionMetadata assertionMetadata)
     {
         var actualException = exceptionSelector(exception);
 

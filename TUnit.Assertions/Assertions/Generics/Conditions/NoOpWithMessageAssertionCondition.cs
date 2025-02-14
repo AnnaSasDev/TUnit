@@ -7,9 +7,7 @@ public class NoOpWithMessageAssertionCondition<TActual>(string expectation) : Ba
     protected override string GetExpectation()
         => expectation;
 
-    protected override ValueTask<AssertionResult> GetResult(
-        TActual? actualValue, Exception? exception,
-        AssertionMetadata assertionMetadata
-    )
+    protected override Task<AssertionResult> GetResult(TActual? actualValue, Exception? exception,
+        AssertionMetadata assertionMetadata)
         => AssertionResult.Passed;
 }

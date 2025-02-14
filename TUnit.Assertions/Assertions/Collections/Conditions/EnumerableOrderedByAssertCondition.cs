@@ -13,10 +13,8 @@ public class EnumerableOrderedByAssertCondition<TInner, TComparisonItem>(
         return $"to be in {order} order";
     }
     
-    protected override ValueTask<AssertionResult> GetResult(
-        IEnumerable<TInner>? actualValue, Exception? exception,
-        AssertionMetadata assertionMetadata
-    )
+    protected override Task<AssertionResult> GetResult(IEnumerable<TInner>? actualValue, Exception? exception,
+        AssertionMetadata assertionMetadata)
     {
         if (actualValue is null)
         {

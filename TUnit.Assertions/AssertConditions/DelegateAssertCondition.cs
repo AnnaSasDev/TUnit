@@ -15,10 +15,8 @@ public abstract class DelegateAssertCondition<TActual, TException> : BaseAssertC
         _customComparers.Add(comparer);
     }
 
-    protected override ValueTask<AssertionResult> GetResult(
-        TActual? actualValue, Exception? exception,
-        AssertionMetadata assertionMetadata
-    )
+    protected override Task<AssertionResult> GetResult(TActual? actualValue, Exception? exception,
+        AssertionMetadata assertionMetadata)
     {
         if (exception != null && exception is not TException)
         {

@@ -18,10 +18,8 @@ public abstract class ValueAssertCondition<TActual>
         _customComparers.Add(comparer);
     }
 
-    protected override ValueTask<AssertionResult> GetResult(
-        TActual? actualValue, Exception? exception,
-        AssertionMetadata assertionMetadata
-    )
+    protected override Task<AssertionResult> GetResult(TActual? actualValue, Exception? exception,
+        AssertionMetadata assertionMetadata)
     {
         if (exception is not null)
         {
