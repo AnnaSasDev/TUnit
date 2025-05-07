@@ -289,12 +289,12 @@ Apple M1 (Virtual), 1 CPU, 3 logical and 3 physical cores
 Job=.NET 9.0  Runtime=.NET 9.0  
 
 ```
-| Method       | Mean       | Error    | StdDev    | Median     |
-|------------- |-----------:|---------:|----------:|-----------:|
-| Build_TUnit  | 1,434.6 ms | 40.35 ms | 115.76 ms | 1,417.9 ms |
-| Build_NUnit  |   933.8 ms | 54.35 ms | 160.25 ms |   846.2 ms |
-| Build_xUnit  | 1,065.7 ms | 54.00 ms | 157.51 ms | 1,014.6 ms |
-| Build_MSTest |   964.5 ms | 32.00 ms |  92.84 ms |   963.9 ms |
+| Method       | Mean       | Error    | StdDev   |
+|------------- |-----------:|---------:|---------:|
+| Build_TUnit  | 1,021.0 ms | 20.38 ms | 54.41 ms |
+| Build_NUnit  |   796.2 ms |  9.28 ms |  8.68 ms |
+| Build_xUnit  |   791.9 ms |  9.73 ms |  8.13 ms |
+| Build_MSTest |   866.5 ms | 16.59 ms | 19.11 ms |
 
 
 
@@ -313,10 +313,10 @@ Job=.NET 9.0  Runtime=.NET 9.0
 ```
 | Method       | Mean    | Error    | StdDev   |
 |------------- |--------:|---------:|---------:|
-| Build_TUnit  | 1.888 s | 0.0346 s | 0.0323 s |
-| Build_NUnit  | 1.441 s | 0.0088 s | 0.0078 s |
-| Build_xUnit  | 1.451 s | 0.0107 s | 0.0095 s |
-| Build_MSTest | 1.472 s | 0.0087 s | 0.0082 s |
+| Build_TUnit  | 1.922 s | 0.0384 s | 0.0359 s |
+| Build_NUnit  | 1.470 s | 0.0250 s | 0.0234 s |
+| Build_xUnit  | 1.474 s | 0.0102 s | 0.0090 s |
+| Build_MSTest | 1.493 s | 0.0111 s | 0.0093 s |
 
 
 
@@ -335,10 +335,10 @@ Job=.NET 9.0  Runtime=.NET 9.0
 ```
 | Method       | Mean    | Error    | StdDev   |
 |------------- |--------:|---------:|---------:|
-| Build_TUnit  | 1.950 s | 0.0380 s | 0.0390 s |
-| Build_NUnit  | 1.506 s | 0.0259 s | 0.0242 s |
-| Build_xUnit  | 1.523 s | 0.0258 s | 0.0242 s |
-| Build_MSTest | 1.571 s | 0.0199 s | 0.0187 s |
+| Build_TUnit  | 2.038 s | 0.0390 s | 0.0400 s |
+| Build_NUnit  | 1.571 s | 0.0230 s | 0.0204 s |
+| Build_xUnit  | 1.563 s | 0.0124 s | 0.0104 s |
+| Build_MSTest | 1.609 s | 0.0174 s | 0.0163 s |
 
 
 ### Scenario: A single test that completes instantly (including spawning a new process and initialising the test framework)
@@ -356,13 +356,13 @@ Apple M1 (Virtual), 1 CPU, 3 logical and 3 physical cores
 Job=.NET 9.0  Runtime=.NET 9.0  
 
 ```
-| Method    | Mean     | Error    | StdDev    |
-|---------- |---------:|---------:|----------:|
-| TUnit_AOT | 102.8 ms |  6.47 ms |  18.98 ms |
-| TUnit     | 540.6 ms | 15.09 ms |  43.54 ms |
-| NUnit     | 870.0 ms | 43.44 ms | 127.42 ms |
-| xUnit     | 901.3 ms | 32.98 ms |  96.72 ms |
-| MSTest    | 667.4 ms | 12.84 ms |  35.36 ms |
+| Method    | Mean      | Error     | StdDev    | Median    |
+|---------- |----------:|----------:|----------:|----------:|
+| TUnit_AOT |  85.77 ms |  3.638 ms | 10.262 ms |  81.10 ms |
+| TUnit     | 572.12 ms | 32.711 ms | 95.936 ms | 535.62 ms |
+| NUnit     | 751.34 ms | 16.344 ms | 47.156 ms | 741.75 ms |
+| xUnit     | 726.19 ms |  9.912 ms |  8.277 ms | 725.15 ms |
+| MSTest    | 633.32 ms |  8.949 ms |  7.472 ms | 635.12 ms |
 
 
 
@@ -381,11 +381,11 @@ Job=.NET 9.0  Runtime=.NET 9.0
 ```
 | Method    | Mean        | Error     | StdDev    |
 |---------- |------------:|----------:|----------:|
-| TUnit_AOT |    25.27 ms |  0.546 ms |  1.611 ms |
-| TUnit     |   828.79 ms | 16.553 ms | 19.705 ms |
-| NUnit     | 1,292.06 ms | 11.775 ms | 11.014 ms |
-| xUnit     | 1,356.75 ms | 11.240 ms |  9.964 ms |
-| MSTest    | 1,153.32 ms | 15.473 ms | 14.474 ms |
+| TUnit_AOT |    25.29 ms |  0.492 ms |  1.296 ms |
+| TUnit     |   865.45 ms | 16.852 ms | 23.625 ms |
+| NUnit     | 1,350.65 ms | 11.469 ms | 10.728 ms |
+| xUnit     | 1,414.09 ms | 14.487 ms | 13.551 ms |
+| MSTest    | 1,195.44 ms | 13.177 ms | 11.681 ms |
 
 
 
@@ -402,13 +402,13 @@ AMD EPYC 7763, 1 CPU, 4 logical and 2 physical cores
 Job=.NET 9.0  Runtime=.NET 9.0  
 
 ```
-| Method    | Mean        | Error     | StdDev    |
-|---------- |------------:|----------:|----------:|
-| TUnit_AOT |    58.37 ms |  1.699 ms |  5.010 ms |
-| TUnit     |   867.50 ms | 17.163 ms | 27.222 ms |
-| NUnit     | 1,310.16 ms | 24.131 ms | 22.573 ms |
-| xUnit     | 1,364.43 ms | 18.959 ms | 17.734 ms |
-| MSTest    | 1,225.52 ms | 13.494 ms | 12.622 ms |
+| Method    | Mean        | Error     | StdDev    | Median      |
+|---------- |------------:|----------:|----------:|------------:|
+| TUnit_AOT |    56.85 ms |  1.858 ms |  5.420 ms |    55.07 ms |
+| TUnit     |   862.17 ms | 17.038 ms | 28.466 ms |   869.99 ms |
+| NUnit     | 1,304.08 ms | 11.036 ms |  9.783 ms | 1,302.09 ms |
+| xUnit     | 1,340.12 ms |  8.262 ms |  7.324 ms | 1,340.04 ms |
+| MSTest    | 1,159.99 ms | 16.060 ms | 15.022 ms | 1,164.48 ms |
 
 
 ### Scenario: A test that takes 50ms to execute, repeated 100 times (including spawning a new process and initialising the test framework)
@@ -428,11 +428,11 @@ Job=.NET 9.0  Runtime=.NET 9.0
 ```
 | Method    | Mean        | Error     | StdDev    |
 |---------- |------------:|----------:|----------:|
-| TUnit_AOT |    233.0 ms |  10.81 ms |  31.53 ms |
-| TUnit     |    717.8 ms |  26.50 ms |  77.73 ms |
-| NUnit     | 14,142.6 ms | 278.95 ms | 488.57 ms |
-| xUnit     | 14,222.4 ms | 281.41 ms | 514.57 ms |
-| MSTest    | 14,312.0 ms | 284.36 ms | 482.87 ms |
+| TUnit_AOT |    243.7 ms |  15.06 ms |  44.41 ms |
+| TUnit     |    656.1 ms |  21.73 ms |  64.07 ms |
+| NUnit     | 14,031.2 ms | 279.09 ms | 531.00 ms |
+| xUnit     | 14,445.6 ms | 287.99 ms | 607.46 ms |
+| MSTest    | 14,315.7 ms | 280.49 ms | 402.27 ms |
 
 
 
@@ -451,11 +451,11 @@ Job=.NET 9.0  Runtime=.NET 9.0
 ```
 | Method    | Mean        | Error     | StdDev    |
 |---------- |------------:|----------:|----------:|
-| TUnit_AOT |    74.21 ms |  0.419 ms |  0.328 ms |
-| TUnit     |   898.92 ms | 17.473 ms | 21.458 ms |
-| NUnit     | 6,298.20 ms | 15.039 ms | 14.068 ms |
-| xUnit     | 6,457.53 ms | 23.558 ms | 22.037 ms |
-| MSTest    | 6,261.68 ms | 15.893 ms | 14.867 ms |
+| TUnit_AOT |    74.22 ms |  0.282 ms |  0.220 ms |
+| TUnit     |   884.77 ms | 17.405 ms | 20.043 ms |
+| NUnit     | 6,277.64 ms | 11.328 ms | 10.596 ms |
+| xUnit     | 6,409.62 ms | 10.768 ms | 10.073 ms |
+| MSTest    | 6,250.27 ms |  9.890 ms |  9.251 ms |
 
 
 
@@ -474,11 +474,11 @@ Job=.NET 9.0  Runtime=.NET 9.0
 ```
 | Method    | Mean       | Error    | StdDev   |
 |---------- |-----------:|---------:|---------:|
-| TUnit_AOT |   110.7 ms |  2.10 ms |  1.97 ms |
-| TUnit     |   952.3 ms | 18.91 ms | 27.12 ms |
-| NUnit     | 7,505.2 ms | 17.84 ms | 15.81 ms |
-| xUnit     | 7,573.6 ms | 19.10 ms | 17.87 ms |
-| MSTest    | 7,460.5 ms | 16.69 ms | 15.61 ms |
+| TUnit_AOT |   109.3 ms |  0.48 ms |  0.38 ms |
+| TUnit     |   932.0 ms | 18.28 ms | 25.63 ms |
+| NUnit     | 7,492.0 ms | 18.12 ms | 16.06 ms |
+| xUnit     | 7,552.5 ms | 20.09 ms | 18.79 ms |
+| MSTest    | 7,438.7 ms | 19.02 ms | 17.79 ms |
 
 
 
